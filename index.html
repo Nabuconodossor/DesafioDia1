@@ -15,55 +15,83 @@
       crossorigin="anonymous"
     />
 
+    <!-- cdn vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
   </head>
+
   <body>
+
     <div id="newApp" class="container">
-        
-      <h1>{{message}}</h1>
+
+   
 
       <table class="table">
         <thead>
+
           <tr>
+
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">nombre</th>
+            <th scope="col">apellido</th>
+            <th scope="col">rut</th>
+            <th scope="col">fecha</th>
+            <th scope="col">edad</th>
+
           </tr>
+
         </thead>
+
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          <tr v-for="usuario in usuarios" key="usuario">
+
+            <th scope="row">usuario 1</th>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellido}}</td>
+            <td>{{usuario.rut}}</td>
+            <td>{{usuario.fecha}}</td>
+            <td>{{usuario.edad}}</td>
+
+ 
         </tbody>
+
       </table>
+
     </div>
 
-     <!-- script VueJs -->
-     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- script VueJs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <!-- instancia Vuejs -->
     <script>
-        const newApp = new Vue({
-            el: "#newApp",
- 
-            data: {
-                message: "bienvenidos a Vue"
-            }
-        });
+      const newApp = new Vue({
+        el: "#newApp",
+        data() {
+          return {
+            usuarios: [{
+               nombre: "ariel", 
+               apellido: "lizama", 
+               rut: "123456-9", 
+               fecha: "11-52-42", 
+               edad: "36" 
+              },
+            { 
+              nombre: "felipe", 
+              apellido: "rimas", 
+              rut: "4881521-6", 
+              fecha: "12-45-78", 
+              edad: "32" 
+            },
+            { 
+              nombre: "ranca", 
+              apellido: "rinco", 
+              rut: "323232-2", 
+              fecha: "251-2-36", 
+              edad: "1" 
+            }],
+          };
+        },
+      });
     </script>
 
 
